@@ -1,0 +1,104 @@
+h2{
+  padding-top: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-family: sans-serif;
+}
+
+
+
+.sensor-body{
+    display: flex;
+    margin: 5%;
+    height: 70vh;
+    width: auto;
+    
+}
+
+.sensor-details-table{
+    width: 60%;
+    height: 70vh;
+    border-radius: 15px; 
+    background-image: url(../assets/images/comp.jpg);
+    background-size: cover;
+    
+
+}
+.sensor-details-img{
+    width: 40%;
+    height: 70vh;
+    margin-left: 2%;
+    border-radius: 15px;
+    background-image: url(../assets/images/emergency.jpg);
+    background-position: center;
+    background-size: cover;
+    
+    
+}
+
+.sensor-details-graph{
+    
+  width: 80%;
+  height: 70vh;
+  margin-left: auto;
+  margin-right: auto;
+      
+}
+
+.sensor-details-graph-inner{
+
+width: inherit;
+height: inherit;
+display: table;
+margin: 0 auto;
+border-radius: 15px;
+background-color: white;
+padding: 2%;
+
+
+}
+
+.table-body{
+    margin: 20px;
+    padding-top: 10px;
+    height: 80%;
+    overflow: auto;
+
+    
+}
+
+.status-p {
+  color: #fff;
+  padding: 0px 20px 1px;
+  border-radius: 20px;
+  display: inline-block;
+  text-transform: capitalize;
+  vertical-align: middle;
+  
+}
+
+.footer-area {
+  margin-top: 10%;
+  text-align: center;
+  padding: 23px 0 19px;
+  
+}
+
+.footer-area p {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: #f7283d;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover{
+    background: #f41226;
+  
+  }
+

@@ -1,0 +1,70 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand mb-1" href="#">
+    <img src="../assets/images/ic_firealarm.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    Fire Monitoring System
+  </a>
+    <span class="navbar-toggler-icon"></span>
+</nav>
+
+    <div class="sensor-body">
+      <div class="sensor-details-table">
+
+        <h2>Fire Alert Dashboard</h2>
+        <div class="table-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Floor No</th>
+                <th scope="col">Room No</th>
+                <th scope="col">Alarm Name</th>
+                <th scope="col">Sensor Status</th>
+                <th scope="col">Smoke Level</th>
+                <th scope="col">CO<sub>2</sub> Level</th>
+                <th scope="col">Fire &nbsp; Alert</th>
+              </tr>
+            </thead>
+          <tbody>
+              <tr *ngFor='let sensorDetails of sensors$'>
+                <th scope="row">{{sensorDetails.id}}</th>
+                <td>{{sensorDetails.floorNo}}</td>
+                <td>{{sensorDetails.roomNo}}</td>
+                <td>{{sensorDetails.name}}</td>
+                <td><span class="status-p bg-primary">Activated</span></td>
+                <td *ngIf="sensorDetails.smokeLevel > 5; else smokeLevelLessThan" style="color:red; font-weight: bold;">{{sensorDetails.smokeLevel}}</td>
+                <ng-template #smokeLevelLessThan>
+                  <td style="color:green;">{{sensorDetails.smokeLevel}}</td>
+                </ng-template>
+                <td *ngIf="sensorDetails.co2Level > 5; else co2LevelLessThan" style="color:red; font-weight: bold;">{{sensorDetails.co2Level}}</td>
+                <ng-template #co2LevelLessThan>
+                  <td style="color:green;">{{sensorDetails.co2Level}}</td>
+                </ng-template>
+                <td *ngIf="sensorDetails.smokeLevel > 5 || sensorDetails.co2Level > 5; else lessThan"><span class="status-p bg-danger">Active</span></td>
+                <ng-template #lessThan>
+                  <td><span class="status-p bg-success">Inactive</span></td>
+                </ng-template>
+              </tr>  
+          </tbody>
+        </table>
+       </div>
+      </div>
+      <div class="sensor-details-img"></div>
+    </div>
+
+  <div class="sensor-details-graph">
+    
+    <div class="sensor-details-graph-inner">
+      <h2>Concentration of Smoke and CO<sub>2</sub></h2>
+      <app-sensor-chart>
+
+      </app-sensor-chart>
+    </div>
+  </div>
+
+  
+  <footer>
+    <div class="footer-area bg-dark">
+        <p>© Copyright 2020 <a href="">Team BackSlash</a>. All right reserved.</p>
+        
+    </div>
+</footer>
